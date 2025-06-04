@@ -6,11 +6,11 @@ from algopy_testing import AlgopyTestContext, algopy_testing_context
 from smart_contracts.personal_bank.contract import PersonalBank
 
 
-@pytest.fixture()
+@pytest.fixture() # a precondition
 def context() -> Iterator[AlgopyTestContext]:
     with algopy_testing_context() as ctx:
         yield ctx
-
+# Each unit test is isolated and does not pass data from one to another a unit test is crea
 
 def test_deposit(context: AlgopyTestContext) -> None:
     # Arrange
